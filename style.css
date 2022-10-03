@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.search_body{
+    border: solid 2px black;
+    width: 550px;
+    height: 550px;
+    margin: auto;
+    margin-top: 25px;
+}
+.search_body label{
+    padding: 5px;
+    
+}
+.search_body input{
+    margin-top: 10px;
+    width: 150px;
+}
+.search_body select{
+    margin-top: 10px;
+    width: 150px;
+}
+button{
+    margin-top: 15px;
+    width: 105px; 
+    height: 30px;  
+    background-color: blue;
+    color: white;
+}
+.search_body .btn{
+  
+}
+.card_search{
+    border: solid 2px black;
+    width: 450px;
+    height: 250px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-top: 25px;
+}
+.bdata{
+    border: solid 2px;
+    width: 450px;
+    height: 220px;
+    margin: auto;
+}
+
+/* Imagen */
+img{
+    height: 150px;
+    width: 150px;
+    float: right;
+    margin-right:35px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
