@@ -1,7 +1,7 @@
 const nombre = document.querySelector("#nombre");
 const apellido = document.querySelector("#apellido");
 let vbuscar = document.querySelector("#vbuscar");
-
+let buscarCliente = document.querySelector("#buscar");
 
 const contacto = [
   {
@@ -51,23 +51,46 @@ const contacto = [
 
 // 01 Se crea la funcion para buscar el cliente y sus propiedades
 function buscarElemento() {
-  // vbuscar = vbuscar.options[vbuscar.selectedIndex].text;
-  // vbuscar = vbuscar.value;
-
   if (nombre.value === "" || vbuscar === "") {
     alert("Campos vacíos");
     document.getElementById("nombre").focus();
-  }else{
-
-  contacto.forEach(element => {
-    (element.nombre);
-  });
+  } else {
+    buscarCliente();
   }
-
 }
 
 const buscarPropiedad = document.getElementById("buscar");
 buscarPropiedad.addEventListener("click", (e) => {
   e.preventDefault();
-  buscarElemento();  
+  buscarElemento();
 });
+
+// ........................................................................
+
+function buscarCliente() {
+  contacto.forEach((i) => {
+    if (i.nombre.toLowerCase() == nombre.value) {
+      switch (buscarPropiedad.options[buscarPropiedad.selectedIndex].value) {
+        case "Apellido":
+          bdata.value = i.apellido;
+          break;
+        case "Nombre":
+          bdata.value = i.nombre;
+          break;
+        case "Gusto":
+          bdata.value = i.gusto;
+          break;
+        case "todo":
+          bdata.value =
+            i.nombre + "  " + i.apellido + "  " + i.todo + "   " + i.gusto;
+          break;
+
+        default:
+          break;
+      }
+    }
+  });
+  if (bdata.value == "") {
+    alert("El nombre no esta en la lista");
+  }
+}

@@ -3,57 +3,82 @@
   padding: 0;
   box-sizing: border-box;
 }
-.search_body{
-    border: solid 2px black;
-    width: 550px;
-    height: 550px;
-    margin: auto;
-    margin-top: 25px;
+body {
+  background-color: #008000f6;
+  color: white;
+  font-weight: bold;
 }
-.search_body label{
-    padding: 5px;
-    
+.search_body {
+  border: solid 2px black;
+  width: 550px;
+  height: 550px;
+  margin: auto;
+  margin-top: 95px;
+  border-radius: 5px;
 }
-.search_body input{
-    margin-top: 10px;
-    width: 150px;
+
+.search_body label {
+  padding: 5px;
 }
-.search_body select{
-    margin-top: 10px;
-    width: 150px;
+#nombre {
+  background-color: aliceblue;
+  margin: 6px;
+  width: 150px;
 }
-button{
-    margin-top: 15px;
-    width: 105px; 
-    height: 30px;  
-    background-color: blue;
-    color: white;
+#apellido {
+  background-color: aliceblue;
+  margin: 6px;
+  width: 150px;
 }
-.search_body .btn{
-  
+.search_body input {
+  margin-top: 10px;
+  width: 150px;
 }
-.card_search{
-    border: solid 2px black;
-    width: 450px;
-    height: 250px;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding-top: 25px;
+.search_body select {
+  margin-top: 10px;
+  width: 150px;
 }
-.bdata{
-    border: solid 2px;
-    width: 450px;
-    height: 220px;
-    margin: auto;
+button {
+  margin-top: 15px;
+  width: 105px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 15px;
+
+}
+button:hover{
+    background-color: green;
+}
+.search_body .btn {
+  padding: auto;
+  margin: 50px;
+}
+.card_search {
+  border: solid 2px black;
+  width: 450px;
+  height: 250px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+}
+.bdata {
+  border: solid 2px;
+  width: 450px;
+  height: 220px;
+  margin: auto;
 }
 
 /* Imagen */
-img{
-    height: 150px;
-    width: 150px;
-    float: right;
-    margin-right:35px;
-    margin-top: 15px;
-    border-radius: 10px;
+img {
+  height: 150px;
+  width: 150px;
+  float: right;
+  margin-right: 35px;
+  margin-top: 15px;
+  border-radius: 10px;
 }
