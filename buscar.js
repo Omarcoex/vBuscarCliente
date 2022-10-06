@@ -1,7 +1,8 @@
 const nombre = document.querySelector("#nombre");
 const apellido = document.querySelector("#apellido");
 let vbuscar = document.querySelector("#vbuscar");
-let buscarCliente = document.querySelector("#buscar");
+let vbuscarCliente = document.querySelector("#buscar");
+let bdata=document.getElementById('bdata')
 
 const contacto = [
   {
@@ -51,6 +52,7 @@ const contacto = [
 
 // 01 Se crea la funcion para buscar el cliente y sus propiedades
 function buscarElemento() {
+  
   if (nombre.value === "" || vbuscar === "") {
     alert("Campos vacíos");
     document.getElementById("nombre").focus();
@@ -69,20 +71,21 @@ buscarPropiedad.addEventListener("click", (e) => {
 
 function buscarCliente() {
   contacto.forEach((i) => {
-    if (i.nombre.toLowerCase() == nombre.value) {
-      switch (buscarPropiedad.options[buscarPropiedad.selectedIndex].value) {
-        case "Apellido":
-          bdata.value = i.apellido;
+  
+    if (i.nombre.toUpperCase() === (nombre.value).toUpperCase()) {
+ 
+      switch (vbuscar.options[vbuscar.selectedIndex].value) {
+        case "apellido":
+          bdata.textContent = i.apellido;
           break;
-        case "Nombre":
-          bdata.value = i.nombre;
+        case "nombre":
+           bdata.textContent =  i.nombre;
           break;
-        case "Gusto":
-          bdata.value = i.gusto;
+        case "gusto":
+           bdata.textContent =  i.gustos;
           break;
         case "todo":
-          bdata.value =
-            i.nombre + "  " + i.apellido + "  " + i.todo + "   " + i.gusto;
+           bdata.textContent = i.nombre + "  " + i.apellido + "  " + i.numero + "   " + i.gustos;
           break;
 
         default:
