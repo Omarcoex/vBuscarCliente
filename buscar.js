@@ -2,7 +2,7 @@ const nombre = document.querySelector("#nombre");
 const apellido = document.querySelector("#apellido");
 let vbuscar = document.querySelector("#vbuscar");
 let vbuscarCliente = document.querySelector("#buscar");
-let bdata=document.getElementById('bdata')
+let bdata = document.getElementById("bdata");
 
 const contacto = [
   {
@@ -52,10 +52,12 @@ const contacto = [
 
 // 01 Se crea la funcion para buscar el cliente y sus propiedades
 function buscarElemento() {
-  
-  if (nombre.value === "" || vbuscar === "") {
+  if (nombre.value === "" || vbuscar === "" || apellido === "") {
     alert("Campos vacíos");
     document.getElementById("nombre").focus();
+    nombre.style.backgroundColor = "yellow";
+    vbuscar.style.backgroundColor = "yellow";
+    apellido.style.backgroundColor = "yellow";
   } else {
     buscarCliente();
   }
@@ -71,29 +73,32 @@ buscarPropiedad.addEventListener("click", (e) => {
 
 function buscarCliente() {
   contacto.forEach((i) => {
-  
-    if (i.nombre.toUpperCase() === (nombre.value).toUpperCase()) {
- 
+    if (i.nombre.toUpperCase() === nombre.value.toUpperCase()) {
       switch (vbuscar.options[vbuscar.selectedIndex].value) {
         case "apellido":
           bdata.textContent = i.apellido;
           break;
         case "nombre":
-           bdata.textContent =  i.nombre;
+          bdata.textContent = i.nombre;
           break;
         case "gusto":
-           bdata.textContent =  i.gustos;
+          bdata.textContent = i.gustos;
+          break;
+        case "numero":
+          bdata.textContent = i.numero;
           break;
         case "todo":
-           bdata.textContent = i.nombre + "  " + i.apellido + "  " + i.numero + "   " + i.gustos;
+          bdata.textContent =
+            i.nombre + "  " + i.apellido + "  " + i.numero + "   " + i.gustos;
           break;
 
         default:
+          alert("No hay mas valores disponible!");
           break;
       }
     }
   });
-  if (bdata.value == "") {
-    alert("El nombre no esta en la lista");
+  if (buscarPropiedad !== contacto) {
+    alert("Nombre y apellido no existe");
   }
 }
